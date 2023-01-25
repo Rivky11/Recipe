@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { UserService } from './services/user.service';
+import User from 'src/models/User';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'lesson9';
+  currentUser: User;  
+  title = 'recipes';
+
+  constructor(private userService: UserService){}
+  ngOnInit(): void {
+    this.currentUser = this.userService.getCurrentUser();
+  }
 }
