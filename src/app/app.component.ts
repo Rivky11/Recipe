@@ -8,11 +8,13 @@ import User from 'src/models/User';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentUser: User;  
+  currentUser: User=this.userService.getCurrentUser()
   title = 'recipes';
-
+ 
   constructor(private userService: UserService){}
   ngOnInit(): void {
-    this.currentUser = this.userService.getCurrentUser();
+    this.userService.subsribeUser.subscribe((user: User) => {
+      this.currentUser = user;
+    })
   }
 }

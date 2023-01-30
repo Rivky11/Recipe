@@ -1,10 +1,11 @@
+<p *ngIf="currentUser">שלום {{currentUser.Name}}</p>
+<p *ngIf="!currentUser">שלום אורח</p>
 
 <nav>
     <a routerLink="/all-recipes">all recipes</a><br/>
     <a routerLink="/login">login</a><br/>
     <a routerLink="/register">register</a><br/>
     <a routerLink="/add-recipe" *ngIf="currentUser">add recipe</a><br/>
-    <a routerLink="/logout" *ngIf="currentUser">logout</a>
-
+    <a routerLink="/logout" *ngIf="currentUser" >logout</a>
   </nav>
   <router-outlet></router-outlet>
