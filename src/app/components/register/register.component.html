@@ -1,0 +1,17 @@
+<form [formGroup]="registerForm" (submit)="onSubmit()">
+    <label>שם: </label>
+    <input type="text" formControlName="name" required><br/>
+    <label>סיסמא: </label>
+    <input type="password" formControlName="password" required><br/>
+    <label>ת.ז </label>
+    <input type="password" formControlName="password" required><br/>
+    <label>מייל </label>
+    <input type="password" formControlName="password" required><br/>
+    <label>כתובת </label>
+    <input type="password" formControlName="password" required><br/>
+    <p *ngIf="isExist">הינך משתמש קים</p>
+    <p *ngIf="isExistPartly">שם משתמש תפוס</p>
+
+    <input type="submit" value="הרשם" />
+
+</form>

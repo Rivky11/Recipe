@@ -1,0 +1,7 @@
+
+<app-filter-recipies (filterCatChange)="setSelectedCategory($event)"></app-filter-recipies>
+<div *ngFor="let item of arrRecipes">
+<div *ngIf="!selectedCategory || selectedCategory == item.CategoryId">
+<app-small-recipe [recipe]="item"></app-small-recipe>
+</div>
+</div>

@@ -1,0 +1,7 @@
+<div>
+    <label>Filter by:</label>
+    <select (change)="filterByCategory()" [(ngModel)]="selectedCat"  >
+        <option>hhhhh</option>
+        <option *ngFor="let cat of categories" [value]="cat.Id">{{cat.Name}}</option>
+    </select>
+</div>

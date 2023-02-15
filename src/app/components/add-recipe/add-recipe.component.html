@@ -1,0 +1,29 @@
+<form [formGroup]="recipeForm" (submit)="onSubmit()">
+    <label>שם: </label>
+    <input type="text" formControlName="name" required><br/>
+    <label>בחר קטגוריה </label>
+    <select>
+        <option></option>
+    <option *ngFor="let cat of categories" [value]="cat.Id">{{cat.Name}}</option>
+    </select><br/>
+    <label>זמן הכנה </label>
+    <input type="number" formControlName="preparationTimeInMinute" required><br/>
+    <label>רמת קושי</label>
+    <input type="number" formControlName="level" required><br/>
+    <label>הוראות הכנה </label>
+    <div formArrayName="layers">
+        <button (click)="addLayer()">Add Layer</button>
+        <ng-container *ngFor="let layerForm of recipeForm.get('layers')['controls']; let i = index">
+            <div class="lesson-form-row" [formGroup]="layerForm">
+                <input type="text" formControlName="component" (focus)="addInput()">
+                <input type="text" formControlName="description" (focus)="addInput()">
+                <button (click)="deleteLayer(i)">Delete Layer</button>
+            </div>
+        </ng-container>
+    </div>
+    <label>תמונות</label>
+    <input type="text" formControlName="image" required><br/>
+
+    <input type="submit" value="הוסף מתכון" />
+
+</form>

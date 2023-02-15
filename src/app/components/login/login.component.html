@@ -1,0 +1,9 @@
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+    <label>שם: </label>
+    <input type="text" formControlName="name" required>
+    <label>סיסמא: </label>
+    <input type="password" formControlName="password" required>
+    <p *ngIf="isWrongPassword">סיסמא שגויה</p>
+    <input type="submit" value="התחבר" />
+       
+</form>

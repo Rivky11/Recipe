@@ -1,0 +1,11 @@
+<div>
+    <p>{{recipe.Name}}</p><br/>
+    <img src="../../assets/images/{{recipe.Image}}"/><br/> 
+    <p>{{recipe.PreparationTimeInMinute | time}}</p><br/>
+    <p>{{recipe.Level | stars}}</p><br/>
+    <p>{{recipeCategoryName}}</p>
+</div> 
+ <a routerLink="/edit-recipe">
+    <input  *ngIf="currentUser" type="button" value="לעריכת מתכון"/>
+</a>
+

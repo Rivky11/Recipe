@@ -1,0 +1,11 @@
+div{
+    width: min-content;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+p{
+    margin: 1px;
+    padding: 3px;
+}

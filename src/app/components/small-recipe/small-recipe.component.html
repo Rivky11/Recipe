@@ -1,0 +1,8 @@
+
+<div >
+    <a *ngIf="currentUser" routerLink="/recipe-details/{{recipe.Id}}">פרטי מתכון</a>
+    <img src="../../assets/images/{{recipe.Image}}"/><br/> 
+    <p>{{recipe.Name}}</p><br/>
+    <p>{{recipe.PreparationTimeInMinute | time}}</p><br/>
+    <p>{{recipe.Level | stars}}</p><br/>
+</div>
